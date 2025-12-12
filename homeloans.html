@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Home Loans — Mayra Property Solutions</title>
+  <meta name="description" content="Home loan assistance, lender comparisons, pre-approval and documentation help from Mayra Property Solutions.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar" role="banner">
+    <a href="index.html" class="logo" aria-label="Mayra Property Solutions">
+      <img src="img/mayralogo.jpg" alt="Mayra logo">
+      <span>Mayra Property Solutions</span>
+    </a>
+
+    <nav role="navigation" aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="flat.html">Flats</a></li>
+        <li><a class="nav-link" href="Houses.html">Houses</a></li>
+        <li><a class="nav-link" href="post-property.html">Post Property</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+        <li><a class="nav-link" href="all-services.html">Services</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn-outline">Contact</a>
+      <a href="post-property.html" class="btn btn-primary">Post Property</a>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <header class="page-header">
+        <h1>Home Loans & Finance</h1>
+        <p class="text-muted">We help you compare lenders, secure pre-approval, and complete documentation for fast loan processing.</p>
+      </header>
+
+      <section class="service-overview">
+        <div class="property-grid">
+          <article class="service-card">
+            <img class="property-card-image" src="https://source.unsplash.com/800x600/?home,loan" alt="Home Loan">
+            <div class="property-card-content">
+              <h3 class="property-card-title">Loan Comparison & Pre-Approval</h3>
+              <p>We compare offers from multiple banks and NBFCs to help you get the best interest rate and repayment terms.</p>
+              <a href="contact.html" class="property-card-link">Request pre-approval →</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="property-card-image" src="https://source.unsplash.com/800x600/?documents,money" alt="Documentation">
+            <div class="property-card-content">
+              <h3 class="property-card-title">Documentation Assistance</h3>
+              <p>We prepare and review loan paperwork, guide you through KYC, income proofs and property documents.</p>
+              <a href="contact.html" class="property-card-link">Get help with documents →</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="property-card-image" src="https://source.unsplash.com/800x600/?calculator,finance" alt="Fast Processing">
+            <div class="property-card-content">
+              <h3 class="property-card-title">Faster Processing</h3>
+              <p>Our team coordinates with lenders and speeds up sanctioning by ensuring paperwork is accurate and complete.</p>
+              <a href="contact.html" class="property-card-link">Apply now →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section style="margin-top:28px;">
+        <h2 class="section-title">Eligibility & Documents</h2>
+        <div class="why-grid">
+          <div class="why-box">
+            <h4>Eligibility</h4>
+            <ul>
+              <li>Minimum age: 21 years (varies by lender)</li>
+              <li>Maximum age at loan maturity typically 65-70 years</li>
+              <li>Stable income and a good credit score (650+ recommended)</li>
+            </ul>
+          </div>
+
+          <div class="why-box">
+            <h4>Common Documents</h4>
+            <ul>
+              <li>Proof of Identity (Aadhaar/PAN/Passport)</li>
+              <li>Address Proof (Utility bill/rental agreement)</li>
+              <li>Income Proof (salary slips, bank statements, ITR)</li>
+              <li>Property Documents (sale deed, title documents, NOC)</li>
+            </ul>
+          </div>
+
+          <div class="why-box">
+            <h4>Loan Types</h4>
+            <ul>
+              <li>Home Purchase Loan</li>
+              <li>Home Construction Loan</li>
+              <li>Balance Transfer</li>
+              <li>Top-up Loans</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top:28px;">
+        <h2 class="section-title">EMI Calculator</h2>
+        <div class="post-form-wrapper">
+          <div class="form-row">
+            <div>
+              <label class="form-label" for="loan-amount">Loan Amount (₹)</label>
+              <input id="loan-amount" class="form-input" type="number" placeholder="e.g., 2500000" value="2500000">
+            </div>
+            <div>
+              <label class="form-label" for="loan-tenure">Tenure (years)</label>
+              <input id="loan-tenure" class="form-input" type="number" value="20">
+            </div>
+          </div>
+          <div class="form-row" style="margin-top:12px;">
+            <div>
+              <label class="form-label" for="loan-rate">Interest Rate (% p.a.)</label>
+              <input id="loan-rate" class="form-input" type="number" step="0.01" value="7.5">
+            </div>
+            <div style="display:flex;align-items:end;">
+              <button id="calc-btn" class="btn btn-primary">Calculate EMI</button>
+            </div>
+          </div>
+
+          <div id="emi-result" style="margin-top:16px;display:none;" class="info-box"></div>
+        </div>
+      </section>
+
+      <section style="margin-top:28px;">
+        <h2 class="section-title">How we help</h2>
+        <div class="why-grid">
+          <div class="why-box">
+            <h4>Compare Lenders</h4>
+            <p>We shortlist lenders based on eligibility and negotiate better terms on your behalf.</p>
+          </div>
+          <div class="why-box">
+            <h4>Pre-approval</h4>
+            <p>Get a conditional pre-approval letter to strengthen your property offer.</p>
+          </div>
+          <div class="why-box">
+            <h4>Post-sanction Support</h4>
+            <p>We assist with disbursal follow-ups and document handovers until registration.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" style="margin-top:32px;border-radius:10px;">
+        <h2>Ready to talk to a loan expert?</h2>
+        <p>Contact our loan advisors for a free consultation and personalized rate comparison.</p>
+        <div style="margin-top:16px;">
+          <a href="contact.html" class="btn btn-outline">Contact Loan Advisor</a>
+          <a href="post-property.html" class="btn btn-primary">Post a Property</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <small>&copy; <span id="year"></span> Mayra Property Solutions. All rights reserved.</small>
+  </footer>
+
+  <script>
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // EMI calculation
+    function calculateEMI(principal, annualRate, years) {
+      var monthlyRate = (annualRate/100)/12;
+      var months = years * 12;
+      if (monthlyRate === 0) return principal / months;
+      var emi = (principal * monthlyRate * Math.pow(1+monthlyRate, months)) / (Math.pow(1+monthlyRate, months)-1);
+      return emi;
+    }
+
+    document.getElementById('calc-btn').addEventListener('click', function(e){
+      e.preventDefault();
+      var p = parseFloat(document.getElementById('loan-amount').value) || 0;
+      var r = parseFloat(document.getElementById('loan-rate').value) || 0;
+      var y = parseFloat(document.getElementById('loan-tenure').value) || 0;
+
+      if (p <= 0 || r <= 0 || y <= 0) {
+        var elErr = document.getElementById('emi-result');
+        elErr.style.display = 'block';
+        elErr.className = 'form-status error';
+        elErr.textContent = 'Please enter valid loan amount, tenure and interest rate.';
+        return;
+      }
+
+      var emi = calculateEMI(p, r, y);
+      var total = (emi * y * 12).toFixed(2);
+      var interest = (total - p).toFixed(2);
+      var emiText = 'Estimated EMI: ₹' + emi.toFixed(2) + ' per month. Total payable: ₹' + total + ' (Interest: ₹' + interest + ')';
+
+      var el = document.getElementById('emi-result');
+      el.style.display = 'block';
+      el.className = 'info-box';
+      el.textContent = emiText;
+    });
+  </script>
+
+</body>
+</html>

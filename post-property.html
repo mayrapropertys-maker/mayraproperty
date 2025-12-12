@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Post Property - Mayra Property Solutions</title>
+    <meta name="description" content="List your property for sale or rent with Mayra Property Solutions. Fast, easy, and secure property posting.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar" role="banner">
+        <a href="index.html" class="logo" aria-label="Mayra Property Solutions">
+            <img src="img/mayralogo.jpg" alt="Mayra logo">
+            <span>Mayra Property Solutions</span>
+        </a>
+        <div class="header-actions">
+            <a href="index.html" class="btn btn-outline">← Home</a>
+        </div>
+    </header>
+
+    <main role="main">
+        <div class="post-property-container">
+            <div class="post-header">
+                <h1>Post Your Property</h1>
+                <p>List your property for sale or rent with Mayra Property Solutions. Fill in the details below and reach thousands of interested buyers and tenants.</p>
+            </div>
+
+            <div class="post-form-wrapper">
+               <form id="post-property-form" action="post-property-save.php" method="POST">
+                    <div id="form-status" class="form-status"></div>
+
+                    <!-- Property Type Section -->
+                    <div class="form-section">
+                        <h3 class="section-title">Property Type</h3>
+                        
+                        <div class="form-group radio-group">
+                            <label>Property Type <span aria-label="required">*</span></label>
+                            <div class="radio-options">
+                                <div class="radio-option">
+                                    <input type="radio" id="type-flat" name="propertyType" value="flat" required>
+                                    <label for="type-flat">Flat/Apartment</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="type-house" name="propertyType" value="house">
+                                    <label for="type-house">House</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="type-villa" name="propertyType" value="villa">
+                                    <label for="type-villa">Villa</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="type-plot" name="propertyType" value="plot">
+                                    <label for="type-plot">Plot</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="type-commercial" name="propertyType" value="commercial">
+                                    <label for="type-commercial">Commercial</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group radio-group">
+                            <label>Purpose <span aria-label="required">*</span></label>
+                            <div class="radio-options">
+                                <div class="radio-option">
+                                    <input type="radio" id="purpose-sell" name="purpose" value="sell" required>
+                                    <label for="purpose-sell">Sell</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="purpose-rent" name="purpose" value="rent">
+                                    <label for="purpose-rent">Rent</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Basic Details Section -->
+                    <div class="form-section">
+                        <h3 class="section-title">Basic Details</h3>
+
+                        <div class="form-group">
+                            <label for="property-title">Property Title <span aria-label="required">*</span></label>
+                            <input id="property-title" type="text" name="title" required aria-required="true" placeholder="e.g., 3 BHK Modern Apartment in South Bopal">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="property-desc">Description <span aria-label="required">*</span></label>
+                            <textarea id="property-desc" name="description" required aria-required="true" placeholder="Provide detailed description of your property including amenities, condition, etc."></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="property-location">Location/Area <span aria-label="required">*</span></label>
+                                <input id="property-location" type="text" name="location" required aria-required="true" placeholder="e.g., South Bopal, Ahmedabad">
+                            </div>
+                            <div class="form-group">
+                                <label for="property-area">Area (sq.ft) <span aria-label="required">*</span></label>
+                                <input id="property-area" type="number" name="area" required aria-required="true" placeholder="0" min="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Property Specifications Section -->
+                    <div class="form-section">
+                        <h3 class="section-title">Specifications</h3>
+
+                        <div class="form-row-3">
+                            <div class="form-group">
+                                <label for="property-bhk">BHK/Rooms <span aria-label="required">*</span></label>
+                                <select id="property-bhk" name="bhk" required aria-required="true">
+                                    <option value="">Select BHK</option>
+                                    <option value="1rk">1 RK</option>
+                                    <option value="1bhk">1 BHK</option>
+                                    <option value="2bhk">2 BHK</option>
+                                    <option value="3bhk">3 BHK</option>
+                                    <option value="4bhk">4 BHK</option>
+                                    <option value="5bhk">5+ BHK</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="property-bath">Bathrooms <span aria-label="required">*</span></label>
+                                <input id="property-bath" type="number" name="bathrooms" required aria-required="true" placeholder="0" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="property-floor">Floor Number</label>
+                                <input id="property-floor" type="text" name="floor" placeholder="e.g., 2, Ground, etc.">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Amenities</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="amenity-lift" name="amenities" value="lift">
+                                    <label for="amenity-lift">Lift/Elevator</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="amenity-parking" name="amenities" value="parking">
+                                    <label for="amenity-parking">Parking</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="amenity-garden" name="amenities" value="garden">
+                                    <label for="amenity-garden">Garden</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="amenity-security" name="amenities" value="security">
+                                    <label for="amenity-security">24/7 Security</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="amenity-gym" name="amenities" value="gym">
+                                    <label for="amenity-gym">Gym</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="amenity-pool" name="amenities" value="pool">
+                                    <label for="amenity-pool">Swimming Pool</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Section -->
+                    <div class="form-section">
+                        <h3 class="section-title">Pricing</h3>
+
+                        <div class="price-row">
+                            <div class="form-group">
+                                <label for="property-price">Price (₹) <span aria-label="required">*</span></label>
+                                <input id="property-price" type="number" name="price" required aria-required="true" placeholder="0" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="property-price-per-sqft">Price per sq.ft (₹)</label>
+                                <input id="property-price-per-sqft" type="number" name="pricePerSqft" placeholder="Auto-calculated" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="property-maintenance">Monthly Maintenance (₹)</label>
+                            <input id="property-maintenance" type="number" name="maintenance" placeholder="0" min="0">
+                        </div>
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="form-section">
+                        <h3 class="section-title">Contact Information</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Your Name <span aria-label="required">*</span></label>
+                                <input id="contact-name" type="text" name="contactName" required aria-required="true" placeholder="Your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email <span aria-label="required">*</span></label>
+                                <input id="contact-email" type="email" name="contactEmail" required aria-required="true" placeholder="your@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-phone">Phone Number <span aria-label="required">*</span></label>
+                            <input id="contact-phone" type="tel" name="contactPhone" required aria-required="true" placeholder="+91 XXXXXXXXXX">
+                        </div>
+                    </div>
+
+                    <!-- Images Section -->
+                    <div class="form-section">
+                        <h3 class="section-title">Property Images</h3>
+                        
+                        <div class="info-box">
+                            📸 Upload high-quality images of your property (front view, rooms, amenities, etc.). This helps attract more buyers/tenants.
+                        </div>
+
+                        <div class="file-upload" id="file-upload">
+                            <div class="file-upload-icon">📁</div>
+                            <div class="file-upload-text">Click to upload or drag and drop</div>
+                            <div class="file-upload-hint">PNG, JPG, GIF up to 5MB each (Max 5 images)</div>
+                            <input type="file" id="image-input" name="images" multiple accept="image/*">
+                        </div>
+                        <div class="file-list" id="file-list"></div>
+                    </div>
+
+                    <!-- Agreement Section -->
+                    <div class="form-section">
+                        <div class="form-group checkbox-item">
+                            <input type="checkbox" id="agreement" name="agreement" required aria-required="true">
+                            <label for="agreement">I agree to Mayra Property Solutions' terms and conditions</label>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Post Property</button>
+                        <button type="reset" class="btn-reset">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <small>&copy; <span id="year"></span> Mayra Property Solutions. All rights reserved.</small>
+    </footer>
+
+    <script>
+        const form = document.getElementById('post-property-form');
+        const status = document.getElementById('form-status');
+        const fileUpload = document.getElementById('file-upload');
+        const imageInput = document.getElementById('image-input');
+        const fileList = document.getElementById('file-list');
+        const priceInput = document.getElementById('property-price');
+        const areaInput = document.getElementById('property-area');
+        const pricePerSqftInput = document.getElementById('property-price-per-sqft');
+
+        let uploadedFiles = [];
+
+        // Auto-calculate price per sq.ft
+        priceInput.addEventListener('input', calculatePricePerSqft);
+        areaInput.addEventListener('input', calculatePricePerSqft);
+
+        function calculatePricePerSqft() {
+            const price = parseFloat(priceInput.value) || 0;
+            const area = parseFloat(areaInput.value) || 0;
+            if (area > 0) {
+                pricePerSqftInput.value = Math.round(price / area);
+            } else {
+                pricePerSqftInput.value = '';
+            }
+        }
+
+        // File upload handling
+        fileUpload.addEventListener('click', () => imageInput.click());
+
+        fileUpload.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            fileUpload.style.borderColor = 'var(--primary-dark)';
+            fileUpload.style.background = 'rgba(0, 94, 255, 0.05)';
+        });
+
+        fileUpload.addEventListener('dragleave', () => {
+            fileUpload.style.borderColor = 'var(--primary)';
+            fileUpload.style.background = 'transparent';
+        });
+
+        fileUpload.addEventListener('drop', (e) => {
+            e.preventDefault();
+            fileUpload.style.borderColor = 'var(--primary)';
+            fileUpload.style.background = 'transparent';
+            
+            const files = Array.from(e.dataTransfer.files);
+            handleFiles(files);
+        });
+
+        imageInput.addEventListener('change', (e) => {
+            handleFiles(Array.from(e.target.files));
+        });
+
+        function handleFiles(files) {
+            const validFiles = files.filter(f => {
+                if (!f.type.startsWith('image/')) {
+                    status.className = 'form-status error';
+                    status.textContent = '✗ Only image files are allowed.';
+                    return false;
+                }
+                if (f.size > 5 * 1024 * 1024) {
+                    status.className = 'form-status error';
+                    status.textContent = '✗ File size must be less than 5MB.';
+                    return false;
+                }
+                return true;
+            });
+
+            if (uploadedFiles.length + validFiles.length > 5) {
+                status.className = 'form-status error';
+                status.textContent = '✗ Maximum 5 images allowed.';
+                return;
+            }
+
+            uploadedFiles = [...uploadedFiles, ...validFiles];
+            displayFiles();
+        }
+
+        function displayFiles() {
+            fileList.innerHTML = uploadedFiles.map((file, idx) => `
+                <div class="file-item">
+                    <span>📄 ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)</span>
+                    <span class="file-remove" onclick="removeFile(${idx})">Remove</span>
+                </div>
+            `).join('');
+        }
+
+        function removeFile(idx) {
+            uploadedFiles.splice(idx, 1);
+            displayFiles();
+        }
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const title = document.getElementById('property-title').value.trim();
+            const description = document.getElementById('property-desc').value.trim();
+            const location = document.getElementById('property-location').value.trim();
+            const area = document.getElementById('property-area').value.trim();
+            const propertyType = document.querySelector('input[name="propertyType"]:checked')?.value;
+            const purpose = document.querySelector('input[name="purpose"]:checked')?.value;
+            const bhk = document.getElementById('property-bhk').value;
+            const bathrooms = document.getElementById('property-bath').value.trim();
+            const price = document.getElementById('property-price').value.trim();
+            const contactName = document.getElementById('contact-name').value.trim();
+            const contactEmail = document.getElementById('contact-email').value.trim();
+            const contactPhone = document.getElementById('contact-phone').value.trim();
+            const agreement = document.getElementById('agreement').checked;
+
+            // Validation
+            if (!title || !description || !location || !area || !propertyType || !purpose || !bhk || !bathrooms || !price || !contactName || !contactEmail || !contactPhone) {
+                status.className = 'form-status error';
+                status.textContent = '✗ Please fill in all required fields.';
+                window.scrollTo(0, 0);
+                return;
+            }
+
+            if (!agreement) {
+                status.className = 'form-status error';
+                status.textContent = '✗ Please agree to our terms and conditions.';
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(contactEmail)) {
+                status.className = 'form-status error';
+                status.textContent = '✗ Please enter a valid email address.';
+                return;
+            }
+
+            // Prepare email
+            const amenities = Array.from(document.querySelectorAll('input[name="amenities"]:checked')).map(cb => cb.value).join(', ');
+            const emailSubject = `New Property Listing: ${title}`;
+            const emailBody = `
+Property Details:
+================
+Type: ${propertyType}
+Purpose: ${purpose}
+Title: ${title}
+Location: ${location}
+Area: ${area} sq.ft
+BHK: ${bhk}
+Bathrooms: ${bathrooms}
+Price: ₹${price}
+Amenities: ${amenities || 'None'}
+
+Description:
+${description}
+
+Contact Information:
+==================
+Name: ${contactName}
+Email: ${contactEmail}
+Phone: ${contactPhone}
+
+Images Uploaded: ${uploadedFiles.length}
+            `.trim();
+
+            // Open email client
+            const mailtoLink = `mailto:mayrapropertysolutions66@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            window.location.href = mailtoLink;
+
+            status.className = 'form-status success';
+            status.textContent = '✓ Thank you! Your property listing is being processed. Opening email to confirm...';
+        });
+
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

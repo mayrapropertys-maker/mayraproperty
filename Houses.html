@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houses in Ahmedabad | Mayra Property Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Browse independent houses, villas and bungalows in Ahmedabad. Filter and search verified listings.">
+    <style>
+        /* small page-specific tweak: make .property-grid gap slightly larger for houses */
+        @media (min-width: 900px) { .property-grid { gap: 30px; } }
+    </style>
+</head>
+<body>
+    <header class="navbar" role="banner">
+        <a href="index.html" class="logo" aria-label="Mayra Property Solutions">
+            <img src="img/mayralogo.jpg" alt="Mayra logo">
+            <span>Mayra Property Solutions</span>
+        </a>
+
+        <nav role="navigation" aria-label="Main navigation">
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <button class="nav-toggle" aria-expanded="false">For Buyers ▾</button>
+                    <div class="mega-menu" aria-hidden="true">
+                        <div class="mega-column">
+                            <h4>Property type</h4>
+                            <a href="flat.html">Flats</a>
+                            <a href="Houses.html">Houses</a>
+                            <a href="builder-floors.html">Builder floors</a>
+                            <a href="plots.html">Plots</a>
+                            <a href="villas.html">Villas</a>
+                            <a href="commercial.html">Commercial properties</a>
+                        </div>
+                        <div class="mega-column">
+                            <h4>Popular areas</h4>
+                            <a href="#">Nikol</a>
+                            <a href="#">Chandkheda</a>
+                            <a href="#">Shela</a>
+                            <a href="#">Khanpur</a>
+                            <a href="#">Ellisbridge</a>
+                            <a href="#">Raikhad</a>
+                        </div>
+                        <div class="mega-column">
+                            <h4>Search by Type</h4>
+                            <a href="#" data-type="independent">Independent House</a>
+                            <a href="#" data-type="villa">Villa</a>
+                            <a href="#" data-type="bungalow">Bungalow</a>
+                        </div>
+                        <div class="mega-column">
+                            <h4>Popular searches</h4>
+                            <a href="#">Houses with garden</a>
+                            <a href="#">Gated community</a>
+                            <a href="#">Ready to move</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <button class="nav-toggle" aria-expanded="false">For Tenants ▾</button>
+                </li>
+
+                <li class="dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Services ▾</button>
+                </li>
+
+                <li><a href="index.html#post" class="nav-link">Post Property</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <a href="post-property.html" class="btn btn-primary">Post Property</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Houses & Villas</h1>
+                <p>Find independent houses, villas and bungalows across Ahmedabad.</p>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="search-box">
+                    <input id="search-input" type="text" placeholder="Search by location, type or price...">
+                    <button id="search-btn" class="btn btn-primary">Search</button>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="villa">Villa</button>
+                    <button class="filter-btn" data-filter="independent">Independent House</button>
+                    <button class="filter-btn" data-filter="bungalow">Bungalow</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="property-grid">
+
+                    <div class="property-card" data-type="villa">
+                        <img src="https://source.unsplash.com/800x600/?villa,luxury" alt="Luxury villa with garden">
+                        <h3>Luxury Villa with Garden</h3>
+                        <p class="location">Shela, Ahmedabad</p>
+                        <p class="price">₹2,50,00,000</p>
+                        <p class="details">4 BHK | 3200 sq.ft | Private garden</p>
+                        <a href="property.html?id=house1" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                    <div class="property-card" data-type="independent">
+                        <img src="https://source.unsplash.com/800x600/?house,modern" alt="Independent modern house">
+                        <h3>Independent Modern House</h3>
+                        <p class="location">South Bopal, Ahmedabad</p>
+                        <p class="price">₹1,35,00,000</p>
+                        <p class="details">3 BHK | 1800 sq.ft | Covered parking</p>
+                        <a href="property.html?id=house2" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                    <div class="property-card" data-type="bungalow">
+                        <img src="https://source.unsplash.com/800x600/?bungalow,house" alt="Spacious bungalow exterior">
+                        <h3>Spacious Bungalow</h3>
+                        <p class="location">Gota, Ahmedabad</p>
+                        <p class="price">₹3,10,00,000</p>
+                        <p class="details">5 BHK | 4200 sq.ft | Pool</p>
+                        <a href="property.html?id=house3" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                    <div class="property-card" data-type="villa">
+                        <img src="https://source.unsplash.com/800x600/?house,garden" alt="Villa with terrace">
+                        <h3>Villa with Terrace</h3>
+                        <p class="location">Ellisbridge, Ahmedabad</p>
+                        <p class="price">₹2,00,00,000</p>
+                        <p class="details">3 BHK | 1800 sq.ft | 2 Car Garage</p>
+                        <a href="property.html?id=house2" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                    <div class="property-card" data-type="independent">
+                        <img src="https://source.unsplash.com/800x600/?house,front" alt="Independent house front view">
+                        <h3>Independent House</h3>
+                        <p class="location">Khanpur, Ahmedabad</p>
+                        <p class="price">₹95,00,000</p>
+                        <p class="details">2 BHK | 1200 sq.ft | Garden</p>
+                        <a href="property.html?id=house1" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                    <div class="property-card" data-type="bungalow">
+                        <img src="https://source.unsplash.com/800x600/?luxury,bungalow" alt="Bungalow with pool">
+                        <h3>Luxury Bungalow</h3>
+                        <p class="location">Nikol, Ahmedabad</p>
+                        <p class="price">₹4,50,00,000</p>
+                        <p class="details">6 BHK | 5000 sq.ft | Pool & Garden</p>
+                        <a href="#" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                </div>
+                <p id="no-results" style="display:none; text-align:center; color:var(--muted); margin-top:12px;">No houses matched your search or filter.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <small>&copy; <span id="year"></span> Mayra Property Solutions. All rights reserved.</small>
+    </footer>
+
+   <script>
+    // Set footer year
+    (function(){
+        var el = document.getElementById('year');
+        if(el) el.textContent = new Date().getFullYear();
+    })();
+
+    // Mega menu toggles
+    (function(){
+        var toggles = document.querySelectorAll('.nav-toggle');
+        toggles.forEach(function(btn){
+            btn.addEventListener('click', function(e){
+                var menu = btn.nextElementSibling;
+                var expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                if(menu){
+                    var hidden = menu.getAttribute('aria-hidden') === 'true';
+                    menu.setAttribute('aria-hidden', String(!hidden));
+                    if (window.innerWidth <= 900) {
+                        menu.style.display = hidden ? 'flex' : 'none';
+                        menu.style.opacity = hidden ? '1' : '0';
+                    }
+                }
+            });
+        });
+    })();
+
+    // Search & filter functionality for flats
+    (function(){
+        var input = document.getElementById('search-input');
+        var btn = document.getElementById('search-btn');
+        var filterBtns = document.querySelectorAll('.filter-btn');
+        var cards = Array.from(document.querySelectorAll('.property-card'));
+        var noResults = document.getElementById('no-results');
+        var currentFilter = 'all';
+
+        function normalize(s){ return String(s||'').toLowerCase().trim(); }
+
+        function runSearchAndFilter(){
+            var q = normalize(input.value);
+            var matched = 0;
+
+            cards.forEach(function(c){
+                var bhk = c.getAttribute('data-bhk');
+                var title = normalize(c.querySelector('h3') && c.querySelector('h3').textContent);
+                var location = normalize(c.querySelector('.location') && c.querySelector('.location').textContent);
+                var price = normalize(c.querySelector('.price') && c.querySelector('.price').textContent);
+                var details = normalize(c.querySelector('.details') && c.querySelector('.details').textContent);
+
+                var matchFilter = (currentFilter === 'all') || (bhk === currentFilter);
+                var matchSearch = !q || (title.indexOf(q) !== -1 || location.indexOf(q) !== -1 || price.indexOf(q) !== -1 || details.indexOf(q) !== -1);
+
+                if(matchFilter && matchSearch){
+                    c.style.display = '';
+                    matched++;
+                } else {
+                    c.style.display = 'none';
+                }
+            });
+
+            if(noResults) noResults.style.display = (matched === 0) ? 'block' : 'none';
+        }
+
+        // Filter buttons
+        filterBtns.forEach(function(btn){
+            btn.addEventListener('click', function(e){
+                e.preventDefault();
+                filterBtns.forEach(function(b){ b.classList.remove('active'); });
+                btn.classList.add('active');
+                currentFilter = btn.getAttribute('data-filter');
+                runSearchAndFilter();
+            });
+        });
+
+        // Search button and Enter key
+        if(btn) btn.addEventListener('click', runSearchAndFilter);
+        if(input) input.addEventListener('keydown', function(e){
+            if(e.key === 'Enter') { e.preventDefault(); runSearchAndFilter(); }
+        });
+    })();
+
+    /* ⭐⭐⭐ REPLACED FETCH CODE — YOUR FINAL ONE ⭐⭐⭐ */
+
+    fetch("fetch-all-properties.php")
+      .then(res => res.json())
+      .then(data => {
+        let html = "";
+        data.forEach(p => {
+          if(p.property_type === "houses"){   // Change this to flat/villa/plot per page
+              html += `
+                <div class="property-card">
+                    <img src="${p.image}">
+                    <h3>${p.title}</h3>
+                    <p class="location">${p.location}</p>
+                    <p class="price">${p.price}</p>
+                    <p class="details">${p.area} sq.ft | ${p.bhk}</p>
+                    <a href="property.html?id=${p.id}" class="btn btn-outline small">View Details</a>
+                </div>`;
+          }
+        });
+
+        document.querySelector(".property-grid").innerHTML = html;
+      });
+
+</script>
+
+</html>

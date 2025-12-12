@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flats in Ahmedabad | Mayra Property Solutions</title>
+    <meta name="description" content="Browse 1 BHK, 2 BHK, and 3 BHK flats in Ahmedabad. Find verified listings with transparent pricing.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar" role="banner">
+        <a href="index.html" class="logo" aria-label="Mayra Property Solutions">
+           <img src="img/mayralogo.jpg" alt="Mayra logo">
+            <span>Mayra Property Solutions</span>
+        </a>
+
+        <nav role="navigation" aria-label="Main navigation">
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <button class="nav-toggle" aria-expanded="false">For Buyers ▾</button>
+                    <div class="mega-menu" aria-hidden="true">
+                        <div class="mega-column">
+                           <h4>Property type</h4>
+                            <a href="flat.html">Flats</a>
+                            <a href="Houses.html">Houses</a>
+                            <a href="builder-floors.html">Builder floors</a>
+                            <a href="plots.html">Plots</a>
+                            <a href="villas.html">Villas</a>
+                            <a href="commercial.html">Commercial properties</a>
+                        </div>
+                        <div class="mega-column">
+                            <h4>Popular areas</h4>
+                            <a href="#">Nikol</a>
+                            <a href="#">Chandkheda</a>
+                            <a href="#">Shela</a>
+                            <a href="#">Khanpur</a>
+                            <a href="#">Ellisbridge</a>
+                            <a href="#">Raikhad</a>
+                        </div>
+                        <div class="mega-column">
+                            <h4>Search by BHK</h4>
+                            <a href="#" data-bhk="1">1 RK Flats</a>
+                            <a href="#" data-bhk="1">1 BHK Flats</a>
+                            <a href="#" data-bhk="2">2 BHK Flats</a>
+                            <a href="#" data-bhk="3">3 BHK Flats</a>
+                            <a href="#">1 BHK Houses</a>
+                            <a href="#">2 BHK Houses</a>
+                        </div>
+                        <div class="mega-column">
+                            <h4>Popular searches</h4>
+                            <a href="#">Flats without brokerage</a>
+                            <a href="#">Under construction flats</a>
+                            <a href="#">Affordable projects</a>
+                            <a href="#">Ready to move-in</a>
+                            <a href="#">New residential projects</a>
+                            <a href="#">Resale properties</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <button class="nav-toggle" aria-expanded="false">For Tenants ▾</button>
+                    <div class="mega-menu" aria-hidden="true">
+                        <div class="mega-column">
+                            <h4>Property type</h4>
+                            <a href="#">Flats</a>
+                            <a href="#">Houses</a>
+                            <a href="#">Builder floors</a>
+                            <a href="#">Plots</a>
+                            <a href="#">Villas</a>
+                            <a href="#">Commercial properties</a>
+                        </div>
+                        <div class="mega-column">
+                            <h4>Popular areas</h4>
+                            <a href="#">Nikol</a>
+                            <a href="#">Chandkheda</a>
+                            <a href="#">Shela</a>
+                            <a href="#">Khanpur</a>
+                            <a href="#">Ellisbridge</a>
+                            <a href="#">Raikhad</a>
+                        </div>
+                        <div class="mega-column">
+                            <h4>Search by BHK</h4>
+                            <a href="#">1 RK Flats</a>
+                            <a href="#">1 BHK Flats</a>
+                            <a href="#">2 BHK Flats</a>
+                            <a href="#">3 BHK Flats</a>
+                        </div>
+                        <div class="mega-column">
+                            <h4>Popular searches</h4>
+                            <a href="#">Flats without brokerage</a>
+                            <a href="#">Under construction flats</a>
+                            <a href="#">Affordable projects</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Services ▾</button>
+                    <div class="mega-menu" aria-hidden="true">
+                        <div class="mega-column">
+                            <a href="#">Home loans</a>
+                            <a href="#">Legal advice</a>
+                            <a href="#">Property valuation</a>
+                            <a href="#">Broker connections</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="index.html#post" class="nav-link">Post Property</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <a href="post-property.html" class="btn btn-primary">Post Property</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page heading -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Flats in Ahmedabad</h1>
+                <p>Browse verified flat listings — 1 BHK, 2 BHK, 3 BHK and more</p>
+            </div>
+        </section>
+
+        <!-- Search & Filter -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-box">
+                    <input id="search-input" type="text" placeholder="Search by location, area, or price...">
+                    <button id="search-btn" class="btn btn-primary">Search</button>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="1bhk">1 BHK</button>
+                    <button class="filter-btn" data-filter="2bhk">2 BHK</button>
+                    <button class="filter-btn" data-filter="3bhk">3 BHK</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flats Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="property-grid">
+
+                    <!-- 1 BHK Flats -->
+                    <div class="property-card" data-bhk="1bhk">
+                        <img src="https://source.unsplash.com/800x600/?apartment,cozy" alt="1 BHK Flat in Nikol">
+                        <h3>1 BHK Flat</h3>
+                        <p class="location">Nikol, Ahmedabad</p>
+                        <p class="price">₹28,50,000</p>
+                        <p class="details">650 sq.ft | Built-up</p>
+                        <a href="property.html?id=flat1" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                    <div class="property-card" data-bhk="1bhk">
+                        <img src="https://source.unsplash.com/800x600/?apartment,studio" alt="1 BHK Flat in Chandkheda">
+                        <h3>1 BHK Modern Flat</h3>
+                        <p class="location">Chandkheda, Ahmedabad</p>
+                        <p class="price">₹32,00,000</p>
+                        <p class="details">700 sq.ft | Ready to Move</p>
+                        <a href="property.html?id=flat2" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                    <div class="property-card" data-bhk="1bhk">
+                        <img src="https://source.unsplash.com/800x600/?apartment,living" alt="1 BHK Flat in Gota">
+                        <h3>1 BHK Affordable Flat</h3>
+                        <p class="location">Gota, Ahmedabad</p>
+                        <p class="price">₹25,50,000</p>
+                        <p class="details">600 sq.ft | Under Construction</p>
+                        <a href="property.html?id=flat3" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                    <!-- 2 BHK Flats -->
+                    <div class="property-card" data-bhk="2bhk">
+                        <img src="https://source.unsplash.com/800x600/?apartment,bedroom" alt="2 BHK Flat in South Bopal">
+                        <h3>2 BHK Modern Flat</h3>
+                        <p class="location">South Bopal, Ahmedabad</p>
+                        <p class="price">₹58,00,000</p>
+                        <p class="details">1100 sq.ft | Ready to Move</p>
+                        <a href="property.html?id=flat4" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                    <div class="property-card" data-bhk="2bhk">
+                        <img src="https://source.unsplash.com/800x600/?apartment,kitchen" alt="2 BHK Flat in Shela">
+                        <h3>2 BHK Spacious Flat</h3>
+                        <p class="location">Shela, Ahmedabad</p>
+                        <p class="price">₹52,50,000</p>
+                        <p class="details">1050 sq.ft | Ready to Move</p>
+                        <a href="property.html?id=flat5" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                    <div class="property-card" data-bhk="2bhk">
+                        <img src="https://source.unsplash.com/800x600/?apartment,balcony" alt="2 BHK Flat in Ellisbridge">
+                        <h3>2 BHK Luxury Flat</h3>
+                        <p class="location">Ellisbridge, Ahmedabad</p>
+                        <p class="price">₹65,00,000</p>
+                        <p class="details">1200 sq.ft | Ready to Move</p>
+                        <a href="property.html?id=flat6" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                    <!-- 3 BHK Flats -->
+                    <div class="property-card" data-bhk="3bhk">
+                        <img src="https://source.unsplash.com/800x600/?apartment,luxury" alt="3 BHK Flat in South Bopal">
+                        <h3>3 BHK Premium Flat</h3>
+                        <p class="location">South Bopal, Ahmedabad</p>
+                        <p class="price">₹95,00,000</p>
+                        <p class="details">1600 sq.ft | Ready to Move</p>
+                        <a href="property.html?id=flat7" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                    <div class="property-card" data-bhk="3bhk">
+                        <img src="https://source.unsplash.com/800x600/?apartment,modern" alt="3 BHK Flat in Nikol">
+                        <h3>3 BHK Luxury Apartment</h3>
+                        <p class="location">Nikol, Ahmedabad</p>
+                        <p class="price">₹1,05,00,000</p>
+                        <p class="details">1700 sq.ft | Ready to Move</p>
+                        <a href="property.html?id=flat8" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                    <div class="property-card" data-bhk="3bhk">
+                        <img src="https://source.unsplash.com/800x600/?apartment,penthouse" alt="3 BHK Flat in Gota">
+                        <h3>3 BHK Spacious Flat</h3>
+                        <p class="location">Gota, Ahmedabad</p>
+                        <p class="price">₹88,00,000</p>
+                        <p class="details">1550 sq.ft | Under Construction</p>
+                        <a href="property.html?id=flat9" target="_blank" class="btn btn-outline small">View Details</a>
+                    </div>
+
+                </div>
+                <p id="no-results" style="display:none; text-align:center; color:var(--muted); margin-top:12px;">No flats matched your search or filter.</p>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="section grey">
+            <div class="container">
+                <h2 class="section-title">Why Choose Our Flats?</h2>
+                <div class="why-grid">
+                    <div class="why-box">
+                        <h3>Verified Listings</h3>
+                        <p>Every flat is checked and verified for accuracy and legal compliance.</p>
+                    </div>
+                    <div class="why-box">
+                        <h3>Transparent Pricing</h3>
+                        <p>No hidden charges. What you see is what you pay.</p>
+                    </div>
+                    <div class="why-box">
+                        <h3>Multiple Options</h3>
+                        <p>Choose from 1 BHK, 2 BHK, 3 BHK across all popular areas.</p>
+                    </div>
+                    <div class="why-box">
+                        <h3>Expert Support</h3>
+                        <p>Our team helps with documentation and loan guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <small>&copy; <span id="year"></span> Mayra Property Solutions. All rights reserved.</small>
+    </footer>
+
+    <script>
+    // Set footer year
+    (function(){
+        var el = document.getElementById('year');
+        if(el) el.textContent = new Date().getFullYear();
+    })();
+
+    // Mega menu toggles
+    (function(){
+        var toggles = document.querySelectorAll('.nav-toggle');
+        toggles.forEach(function(btn){
+            btn.addEventListener('click', function(e){
+                var menu = btn.nextElementSibling;
+                var expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                if(menu){
+                    var hidden = menu.getAttribute('aria-hidden') === 'true';
+                    menu.setAttribute('aria-hidden', String(!hidden));
+                    if (window.innerWidth <= 900) {
+                        menu.style.display = hidden ? 'flex' : 'none';
+                        menu.style.opacity = hidden ? '1' : '0';
+                    }
+                }
+            });
+        });
+    })();
+
+    // Search & filter functionality for flats
+    (function(){
+        var input = document.getElementById('search-input');
+        var btn = document.getElementById('search-btn');
+        var filterBtns = document.querySelectorAll('.filter-btn');
+        var cards = Array.from(document.querySelectorAll('.property-card'));
+        var noResults = document.getElementById('no-results');
+        var currentFilter = 'all';
+
+        function normalize(s){ return String(s||'').toLowerCase().trim(); }
+
+        function runSearchAndFilter(){
+            var q = normalize(input.value);
+            var matched = 0;
+
+            cards.forEach(function(c){
+                var bhk = c.getAttribute('data-bhk');
+                var title = normalize(c.querySelector('h3') && c.querySelector('h3').textContent);
+                var location = normalize(c.querySelector('.location') && c.querySelector('.location').textContent);
+                var price = normalize(c.querySelector('.price') && c.querySelector('.price').textContent);
+                var details = normalize(c.querySelector('.details') && c.querySelector('.details').textContent);
+
+                var matchFilter = (currentFilter === 'all') || (bhk === currentFilter);
+                var matchSearch = !q || (title.indexOf(q) !== -1 || location.indexOf(q) !== -1 || price.indexOf(q) !== -1 || details.indexOf(q) !== -1);
+
+                if(matchFilter && matchSearch){
+                    c.style.display = '';
+                    matched++;
+                } else {
+                    c.style.display = 'none';
+                }
+            });
+
+            if(noResults) noResults.style.display = (matched === 0) ? 'block' : 'none';
+        }
+
+        // Filter buttons
+        filterBtns.forEach(function(btn){
+            btn.addEventListener('click', function(e){
+                e.preventDefault();
+                filterBtns.forEach(function(b){ b.classList.remove('active'); });
+                btn.classList.add('active');
+                currentFilter = btn.getAttribute('data-filter');
+                runSearchAndFilter();
+            });
+        });
+
+        // Search button and Enter key
+        if(btn) btn.addEventListener('click', runSearchAndFilter);
+        if(input) input.addEventListener('keydown', function(e){
+            if(e.key === 'Enter') { e.preventDefault(); runSearchAndFilter(); }
+        });
+    })();
+
+    /* ⭐⭐⭐ REPLACED FETCH CODE — YOUR FINAL ONE ⭐⭐⭐ */
+
+    fetch("fetch-all-properties.php")
+      .then(res => res.json())
+      .then(data => {
+        let html = "";
+        data.forEach(p => {
+          if(p.property_type === "flat"){   // Change this to flat/villa/plot per page
+              html += `
+                <div class="property-card">
+                    <img src="${p.image}">
+                    <h3>${p.title}</h3>
+                    <p class="location">${p.location}</p>
+                    <p class="price">${p.price}</p>
+                    <p class="details">${p.area} sq.ft | ${p.bhk}</p>
+                    <a href="property.html?id=${p.id}" class="btn btn-outline small">View Details</a>
+                </div>`;
+          }
+        });
+
+        document.querySelector(".property-grid").innerHTML = html;
+      });
+
+</script>
+
+
+</body>
+</html>

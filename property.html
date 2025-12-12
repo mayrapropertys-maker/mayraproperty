@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Property Details - Mayra Property Solutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar" role="banner">
+    <a href="index.html" class="logo" aria-label="Mayra Property Solutions">
+      <img src="img/mayralogo.jpg" alt="Mayra logo">
+      <span>MAYRA PROPERTY</span>
+    </a>
+    <div class="header-actions">
+      <a href="index.html" class="btn btn-outline">← Home</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="property-detail">
+      <div id="content" role="main">Loading property details...</div>
+    </div>
+  </main>
+
+  <footer>
+    <small>&copy; <span id="year"></span> Mayra Property Solutions. All rights reserved.</small>
+  </footer>
+
+  <script>
+    // ===== CONFIG =====
+    const CONFIG = {
+      businessEmail: 'mayrapropertysolutions66@gmail.com',
+      businessPhone: '919512134343',
+      agentEmail: 'info@mayraproperty.com',
+    };
+
+    // ===== PROPERTIES DATA =====
+    const PROPERTIES = {
+      "index1": {
+        id: 'index1', title: '6 BHK Luxury Apartment', location: 'nikol, Ahmedabad', price: '',
+        details: '6 BHK | 242 var polt | fully furnished',
+        img: 'img/6bhk1.jpeg',
+        desc: 'A modern 3 BHK apartment with premium finishes, spacious living area, and excellent natural light. Close to schools and shopping.',
+        features: ['Lift', 'Parking', '24/7 Security']
+      },
+      "index2": {
+        id: 'index2', title: '3 bhk apartment', location: 'new naroda, Ahmedabad', price: '₹90,00,000',
+        details: '3 BHK | 177 var | full furnished', img: 'img/3bhk1.jpeg',
+        desc: 'Comfortable 3 BHK flat with open-plan living and modern kitchen. Ideal for small families.', features: ['Balcony', 'Gated complex']
+      },
+      "index3": {
+        id: 'index3', title: '4 BHK  FURNISHED APARTMENT', location: 'new naroda, Ahmedabad', price: '₹1,35,00,000',
+        details: '4 BHK | 135 var | furnished', img: 'img/4bhk1.jpeg',
+        desc: ' Great connectivity and peaceful neighborhood.', features: ['']
+      },
+      // flats
+      "flat1":{ id:'flat1', title:'1 BHK Flat', location:'Nikol', price:'₹28,50,000', details:'650 sq.ft', img:'https://source.unsplash.com/1200x800/?apartment,cozy', desc:'Cozy 1 BHK ideal for singles or couples.', features:['Near market','Low maintenance'] },
+      "flat2":{ id:'flat2', title:'1 BHK Modern Flat', location:'Chandkheda', price:'₹32,00,000', details:'700 sq.ft', img:'https://source.unsplash.com/1200x800/?apartment,studio', desc:'Modern finishes, ready to move.', features:['Good connectivity'] },
+      "flat3":{ id:'flat3', title:'1 BHK Affordable Flat', location:'Gota', price:'₹25,50,000', details:'600 sq.ft', img:'https://source.unsplash.com/1200x800/?apartment,living', desc:'Affordable option under development.', features:['Affordable','Pre-launch'] },
+      "flat4":{ id:'flat4', title:'2 BHK Modern Flat', location:'South Bopal', price:'₹58,00,000', details:'1100 sq.ft', img:'https://source.unsplash.com/1200x800/?apartment,bedroom', desc:'Spacious 2BHK with parking.', features:['Parking','Clubhouse'] },
+      "flat5":{ id:'flat5', title:'2 BHK Spacious Flat', location:'Shela', price:'₹52,50,000', details:'1050 sq.ft', img:'https://source.unsplash.com/1200x800/?apartment,kitchen', desc:'Bright interiors and balcony.', features:['Balcony','Good ventilation'] },
+      "flat6":{ id:'flat6', title:'2 BHK Luxury Flat', location:'Ellisbridge', price:'₹65,00,000', details:'1200 sq.ft', img:'https://source.unsplash.com/1200x800/?apartment,balcony', desc:'Premium finishes throughout.', features:['Prime area','Gym'] },
+      "flat7":{ id:'flat7', title:'3 BHK Premium Flat', location:'South Bopal', price:'₹95,00,000', details:'1600 sq.ft', img:'https://source.unsplash.com/1200x800/?apartment,luxury', desc:'Large family-friendly apartment.', features:['Lift','Parking'] },
+      "flat8":{ id:'flat8', title:'3 BHK Luxury Apartment', location:'Nikol', price:'₹1,05,00,000', details:'1700 sq.ft', img:'https://source.unsplash.com/1200x800/?apartment,modern', desc:'High-end finishes and amenities.', features:['Swimming pool','Security'] },
+      "flat9":{ id:'flat9', title:'3 BHK Spacious Flat', location:'Gota', price:'₹88,00,000', details:'1550 sq.ft', img:'https://source.unsplash.com/1200x800/?apartment,penthouse', desc:'Under construction with modern layout.', features:['Future development'] },
+      // houses
+      "house1":{ id:'house1', title:'Luxury Villa with Garden', location:'Shela', price:'₹2,50,00,000', details:'4 BHK | 3200 sq.ft', img:'https://source.unsplash.com/1200x800/?villa,garden', desc:'Private garden and premium amenities.', features:['Pool','Garden'] },
+      "house2":{ id:'house2', title:'Independent Modern House', location:'South Bopal', price:'₹1,35,00,000', details:'3 BHK | 1800 sq.ft', img:'https://source.unsplash.com/1200x800/?house,modern', desc:'Recently renovated, covered parking.', features:['Parking','Renovated'] },
+      "house3":{ id:'house3', title:'Spacious Bungalow', location:'Gota', price:'₹3,10,00,000', details:'5 BHK | 4200 sq.ft', img:'https://source.unsplash.com/1200x800/?bungalow,luxury', desc:'Large plot with pool.', features:['Pool','Large plot'] },
+      "house4":{ id:'house4', title:'Villa with Terrace', location:'Ellisbridge', price:'₹2,00,00,000', details:'4 BHK | 3000 sq.ft', img:'https://source.unsplash.com/1200x800/?house,terrace', desc:'Terrace and spacious rooms.', features:['Terrace','Garage'] },
+      "house5":{ id:'house5', title:'Independent House', location:'Khanpur', price:'₹95,00,000', details:'3 BHK | 1400 sq.ft', img:'https://source.unsplash.com/1200x800/?house,front', desc:'Well-located independent house.', features:['Renovated'] },
+      "house6":{ id:'house6', title:'Luxury Bungalow', location:'Nikol', price:'₹4,50,00,000', details:'6 BHK | 5000 sq.ft', img:'https://source.unsplash.com/1200x800/?luxury,bungalow', desc:'Premium bungalow with pool & garden.', features:['Pool','Garden'] },
+      // builder floors
+      "bf1":{ id:'bf1', title:'2 BHK Builder Floor', location:'Nikol', price:'₹52,00,000', details:'1100 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?floor,building', desc:'Modern 2 BHK builder floor with excellent ventilation.', features:['Ready to move','Car parking'] },
+      "bf2":{ id:'bf2', title:'2 BHK Modern Floor', location:'Chandkheda', price:'₹48,50,000', details:'1050 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?floor,modern', desc:'Contemporary finishes with modern amenities.', features:['Modern design','Good connectivity'] },
+      "bf3":{ id:'bf3', title:'2 BHK Spacious Floor', location:'Gota', price:'₹45,00,000', details:'1000 sq.ft | Under Construction', img:'https://source.unsplash.com/1200x800/?floor,spacious', desc:'Under construction with affordable pricing.', features:['Pre-launch pricing','Spacious'] },
+      "bf4":{ id:'bf4', title:'3 BHK Luxury Floor', location:'South Bopal', price:'₹75,00,000', details:'1500 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?floor,luxury', desc:'Premium 3 BHK floor with luxury finishes.', features:['Luxury','Premium area'] },
+      "bf5":{ id:'bf5', title:'3 BHK Elegant Floor', location:'Shela', price:'₹72,00,000', details:'1450 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?floor,elegant', desc:'Elegantly designed 3 BHK floor space.', features:['Elegant','Good ventilation'] },
+      "bf6":{ id:'bf6', title:'3 BHK Premium Floor', location:'Ellisbridge', price:'₹80,00,000', details:'1550 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?floor,premium', desc:'Premium 3 BHK in prime location.', features:['Prime location','Premium finishes'] },
+      "bf7":{ id:'bf7', title:'4 BHK Spacious Floor', location:'South Bopal', price:'₹1,10,00,000', details:'2000 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?floor,spacious,luxury', desc:'Spacious 4 BHK floor for larger families.', features:['Spacious','Family-friendly'] },
+      "bf8":{ id:'bf8', title:'4 BHK Premium Mansion Floor', location:'Nikol', price:'₹1,25,00,000', details:'2200 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?floor,mansion', desc:'Premium 4 BHK mansion-style floor.', features:['Premium mansion','Large space'] },
+      "bf9":{ id:'bf9', title:'4 BHK Luxury Penthouse Floor', location:'Gota', price:'₹1,15,00,000', details:'2100 sq.ft | Under Construction', img:'https://source.unsplash.com/1200x800/?floor,penthouse', desc:'Luxury penthouse floor under development.', features:['Penthouse','Modern design'] },
+      // plots
+      "plot1":{ id:'plot1', title:'Residential Plot - Nikol', location:'Nikol, Ahmedabad', price:'₹32,00,000', details:'500 sq.ft | Plot Land', img:'https://source.unsplash.com/1200x800/?plot,land', desc:'Well-located residential plot ideal for construction.', features:['Legal','Clear title'] },
+      "plot2":{ id:'plot2', title:'Residential Plot - Chandkheda', location:'Chandkheda, Ahmedabad', price:'₹28,50,000', details:'450 sq.ft | Plot Land', img:'https://source.unsplash.com/1200x800/?plot,development', desc:'Affordable residential plot in developing area.', features:['Affordable','Good connectivity'] },
+      "plot3":{ id:'plot3', title:'Corner Plot - Gota', location:'Gota, Ahmedabad', price:'₹38,00,000', details:'600 sq.ft | Corner Plot', img:'https://source.unsplash.com/1200x800/?plot,corner', desc:'Corner plot with maximum exposure and value.', features:['Corner plot','Premium location'] },
+      "plot4":{ id:'plot4', title:'Commercial Plot - South Bopal', location:'South Bopal, Ahmedabad', price:'₹75,00,000', details:'1200 sq.ft | Commercial', img:'https://source.unsplash.com/1200x800/?commercial,development', desc:'Commercial plot in high-growth area.', features:['Commercial','High growth'] },
+      "plot5":{ id:'plot5', title:'Commercial Plot - Shela', location:'Shela, Ahmedabad', price:'₹68,50,000', details:'1100 sq.ft | Commercial', img:'https://source.unsplash.com/1200x800/?commercial,plaza', desc:'Commercial plot with excellent visibility.', features:['Commercial','High visibility'] },
+      "plot6":{ id:'plot6', title:'Commercial Plot - Ellisbridge', location:'Ellisbridge, Ahmedabad', price:'₹85,00,000', details:'1500 sq.ft | Commercial', img:'https://source.unsplash.com/1200x800/?commercial,retail', desc:'Premium commercial plot in prime location.', features:['Prime location','Commercial'] },
+      "plot7":{ id:'plot7', title:'Gated Community Plot - Nikol', location:'Nikol, Ahmedabad', price:'₹42,00,000', details:'700 sq.ft | Gated Community', img:'https://source.unsplash.com/1200x800/?plot,residential', desc:'Residential plot in gated community with amenities.', features:['Gated community','Amenities'] },
+      "plot8":{ id:'plot8', title:'Prime Residential Plot - Shela', location:'Shela, Ahmedabad', price:'₹55,00,000', details:'850 sq.ft | Prime Location', img:'https://source.unsplash.com/1200x800/?plot,prime', desc:'Prime residential plot in premium location.', features:['Prime location','Residential'] },
+      "plot9":{ id:'plot9', title:'Commercial Plot - Khanpur', location:'Khanpur, Ahmedabad', price:'₹92,00,000', details:'1800 sq.ft | Commercial', img:'https://source.unsplash.com/1200x800/?commercial,office', desc:'Large commercial plot for development.', features:['Commercial','Large area'] },
+      // villas
+      "villa1":{ id:'villa1', title:'3 BHK Luxury Villa', location:'Nikol, Ahmedabad', price:'₹1,25,00,000', details:'2500 sq.ft | Pool | Garden', img:'https://source.unsplash.com/1200x800/?villa,luxury', desc:'Luxury 3 BHK villa with private pool and garden.', features:['Pool','Garden','Luxury'] },
+      "villa2":{ id:'villa2', title:'3 BHK Modern Villa', location:'Chandkheda, Ahmedabad', price:'₹1,15,00,000', details:'2400 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?villa,modern', desc:'Modern 3 BHK villa ready for immediate occupancy.', features:['Ready to move','Modern design'] },
+      "villa3":{ id:'villa3', title:'3 BHK Elegant Villa', location:'Gota, Ahmedabad', price:'₹1,08,00,000', details:'2300 sq.ft | Gated Community', img:'https://source.unsplash.com/1200x800/?villa,elegant', desc:'Elegant 3 BHK villa in secure gated community.', features:['Gated community','Elegant design'] },
+      "villa4":{ id:'villa4', title:'4 BHK Premium Villa', location:'South Bopal, Ahmedabad', price:'₹1,75,00,000', details:'3500 sq.ft | Pool | Home Theatre', img:'https://source.unsplash.com/1200x800/?villa,premium', desc:'Premium 4 BHK villa with home theatre and pool.', features:['Pool','Home theatre','Premium'] },
+      "villa5":{ id:'villa5', title:'4 BHK Spacious Villa', location:'Shela, Ahmedabad', price:'₹1,65,00,000', details:'3300 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?villa,spacious', desc:'Spacious 4 BHK villa with modern amenities.', features:['Spacious','Ready to move'] },
+      "villa6":{ id:'villa6', title:'4 BHK Mansion Villa', location:'Ellisbridge, Ahmedabad', price:'₹1,95,00,000', details:'3800 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?villa,mansion', desc:'Mansion-style 4 BHK villa in premium area.', features:['Mansion style','Premium location'] },
+      "villa7":{ id:'villa7', title:'5 BHK Luxury Villa', location:'South Bopal, Ahmedabad', price:'₹2,75,00,000', details:'5000 sq.ft | Pool | Garden | Gym', img:'https://source.unsplash.com/1200x800/?villa,penthouse', desc:'Luxury 5 BHK villa with comprehensive amenities.', features:['Pool','Garden','Gym'] },
+      "villa8":{ id:'villa8', title:'5 BHK Palatial Villa', location:'Nikol, Ahmedabad', price:'₹3,25,00,000', details:'5500 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?villa,palatial', desc:'Palatial 5 BHK villa ready for occupancy.', features:['Palatial','Premium amenities'] },
+      "villa9":{ id:'villa9', title:'5 BHK Estate Villa', location:'Gota, Ahmedabad', price:'₹2,85,00,000', details:'5200 sq.ft | Gated Community', img:'https://source.unsplash.com/1200x800/?villa,estate', desc:'Estate-style 5 BHK villa in gated community.', features:['Estate style','Gated community'] },
+      // commercial
+      "comm1":{ id:'comm1', title:'Modern Office Space', location:'South Bopal, Ahmedabad', price:'₹85,00,000', details:'2500 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?office,modern', desc:'Modern office space ideal for corporate use.', features:['Ready to move','Professional space'] },
+      "comm2":{ id:'comm2', title:'Corporate Office Suite', location:'Ellisbridge, Ahmedabad', price:'₹1,20,00,000', details:'3500 sq.ft | Furnished', img:'https://source.unsplash.com/1200x800/?office,corporate', desc:'Furnished corporate office suite with premium amenities.', features:['Furnished','Premium','Corporate'] },
+      "comm3":{ id:'comm3', title:'Professional Office', location:'Khanpur, Ahmedabad', price:'₹72,00,000', details:'2000 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?office,professional', desc:'Professional office space ready for use.', features:['Ready to move','Professional'] },
+      "comm4":{ id:'comm4', title:'Premium Retail Shop', location:'Chandkheda, Ahmedabad', price:'₹55,00,000', details:'1200 sq.ft | High foot traffic', img:'https://source.unsplash.com/1200x800/?retail,shop', desc:'Premium retail shop with excellent foot traffic.', features:['High traffic','Retail','Prime location'] },
+      "comm5":{ id:'comm5', title:'Retail Mall Space', location:'Shela, Ahmedabad', price:'₹68,50,000', details:'1500 sq.ft | Prime Location', img:'https://source.unsplash.com/1200x800/?retail,mall', desc:'Retail space in mall with premium visibility.', features:['Mall space','Prime location'] },
+      "comm6":{ id:'comm6', title:'Retail Store', location:'Raikhad, Ahmedabad', price:'₹45,00,000', details:'800 sq.ft | Corner Location', img:'https://source.unsplash.com/1200x800/?retail,store', desc:'Corner location retail store with great visibility.', features:['Corner location','Retail','Affordable'] },
+      "comm7":{ id:'comm7', title:'Industrial Warehouse', location:'South Bopal, Ahmedabad', price:'₹2,50,00,000', details:'10000 sq.ft | Ready to Move', img:'https://source.unsplash.com/1200x800/?warehouse,industrial', desc:'Large industrial warehouse ready for operations.', features:['Warehouse','Large','Ready to move'] },
+      "comm8":{ id:'comm8', title:'Manufacturing Unit', location:'Khanpur, Ahmedabad', price:'₹1,80,00,000', details:'8000 sq.ft | Industrial Area', img:'https://source.unsplash.com/1200x800/?factory,manufacturing', desc:'Manufacturing unit in industrial area.', features:['Manufacturing','Industrial','Spacious'] },
+      "comm9":{ id:'comm9', title:'Logistics & Storage Space', location:'Chandkheda, Ahmedabad', price:'₹1,50,00,000', details:'6000 sq.ft | Loading Facility', img:'https://source.unsplash.com/1200x800/?storage,logistics', desc:'Logistics space with loading facility.', features:['Logistics','Loading facility','Industrial'] }
+    };
+
+    function getParam(name){
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+
+    function hashStringToInt(s){
+      var h = 0; for(var i=0;i<s.length;i++){ h = ((h<<5)-h) + s.charCodeAt(i); h = h & h; } return Math.abs(h);
+    }
+
+    function daysAgoFromId(id){
+      return (hashStringToInt(id) % 180) + 1;
+    }
+
+    function viewsFromId(id){
+      return (hashStringToInt(id + 'views') % 2000) + 20;
+    }
+
+    function formatDateFromDaysAgo(days){
+      var d = new Date(Date.now() - days*24*60*60*1000);
+      return d.toLocaleDateString('en-IN', {year: 'numeric', month: 'short', day: 'numeric'});
+    }
+
+    function isFavorite(id){
+      try{ return localStorage.getItem('fav_' + id) === '1'; }catch(e){ return false; }
+    }
+
+    function setFavorite(id, value){
+      try{ if(value) localStorage.setItem('fav_' + id, '1'); else localStorage.removeItem('fav_' + id); }catch(e){}
+    }
+
+    // ===== RENDERING =====
+    function render(property){
+      const el = document.getElementById('content');
+      if(!property){ 
+        el.innerHTML = '<p>Property not found.</p><p><a href="index.html" class="btn btn-primary">← Back to Home</a></p>'; 
+        return; 
+      }
+
+      var daysAgo = daysAgoFromId(String(property.id || 'x'));
+      var listedDate = formatDateFromDaysAgo(daysAgo);
+      var views = viewsFromId(String(property.id || 'x'));
+      var favState = isFavorite(property.id);
+
+      el.innerHTML = `
+        <div class="property-hero">
+          <img src="${property.img}" alt="${property.title}" role="img">
+          <div class="property-info">
+            <h1>${property.title}</h1>
+            <div class="property-meta">${property.location} • ${property.details}</div>
+            <div class="property-price">${property.price}</div>
+
+            <div class="property-stats">
+              <div class="property-stats-item">
+                <span class="stat-label">Listed:</span>
+                <span id="listed-date">${listedDate}</span>
+              </div>
+              <div class="property-stats-item">
+                <span id="days-listed">${daysAgo} days on market</span>
+              </div>
+              <div class="property-stats-item">
+                <span id="views-count">${views} views</span>
+              </div>
+              <button id="fav-btn" class="favorite-btn" aria-label="Save property" aria-pressed="${favState}">
+                <span>${favState ? '♥' : '♡'}</span> <span>${favState ? 'Saved' : 'Save'}</span>
+              </button>
+              <span id="fav-count" class="favorite-count"></span>
+            </div>
+
+            <div class="property-features">
+              ${(property.features||[]).map(f=>`<span class="property-feature">${f}</span>`).join('')}
+            </div>
+
+            <div class="property-contact">
+              <button id="contact-agent-btn" class="btn btn-primary contact-btn" aria-label="Contact agent about this property">Contact Agent</button>
+              <a href="mailto:${CONFIG.businessEmail}?subject=Enquiry about ${encodeURIComponent(property.title)}" class="btn btn-outline contact-btn">Email</a>
+              <a href="https://wa.me/${CONFIG.businessPhone}?text=${encodeURIComponent('Hello, I am interested in ' + property.title + ' (' + property.id + ')')}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp contact-btn" aria-label="Contact via WhatsApp">WhatsApp</a>
+              <a href="mailto:${CONFIG.agentEmail}" class="btn btn-outline contact-btn">${CONFIG.agentEmail}</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-description">
+          <h2>Overview</h2>
+          <p>${property.desc}</p>
+        </div>
+
+        <div class="interest-form">
+          <h2>Interested in this property?</h2>
+          <form id="interest-form" aria-label="Interest inquiry form">
+            <input type="hidden" name="propertyId" value="${property.id}">
+            <input type="hidden" name="propertyTitle" value="${property.title}">
+
+            <div class="form-row">
+              <div class="form-col">
+                <label class="form-label" for="form-name">Name <span aria-label="required">*</span></label>
+                <input id="form-name" class="form-input" name="name" type="text" required aria-required="true">
+              </div>
+              <div class="form-col">
+                <label class="form-label" for="form-email">Email <span aria-label="required">*</span></label>
+                <input id="form-email" class="form-input" name="email" type="email" required aria-required="true">
+              </div>
+              <div class="form-col">
+                <label class="form-label" for="form-phone">Phone <span aria-label="required">*</span></label>
+                <input id="form-phone" class="form-input" name="phone" type="tel" required aria-required="true">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="form-message">Message (optional)</label>
+              <textarea id="form-message" class="form-textarea" name="message" placeholder="Any questions or details you'd like to share..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Preferred contact method</label>
+              <div class="contact-method-group">
+                <label class="form-radio">
+                  <input type="radio" name="contactMethod" value="email" checked>
+                  Email
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="contactMethod" value="whatsapp">
+                  WhatsApp
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="contactMethod" value="phone">
+                  Phone call
+                </label>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Send Interest</button>
+              <button type="button" class="btn btn-outline" id="interest-cancel">Cancel</button>
+              <span id="interest-status" class="form-status"></span>
+            </div>
+          </form>
+        </div>
+      `;
+
+      // Initialize interactions
+      setupInterestForm(property);
+      setupPropertyStats(property);
+    }
+
+    // ===== FORM & INTERACTIONS =====
+    function setupInterestForm(property){
+      try{
+        var btn = document.getElementById('contact-agent-btn');
+        var form = document.getElementById('interest-form');
+        var status = document.getElementById('interest-status');
+
+        if(btn){
+          btn.addEventListener('click', function(e){
+            e.preventDefault();
+            if(form){
+              form.scrollIntoView({behavior:'smooth', block:'center'});
+              var first = form.querySelector('[name=name]'); 
+              if(first) first.focus();
+            }
+          });
+        }
+
+        if(!form) return;
+
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          var fd = new FormData(form);
+          var name = fd.get('name') || '';
+          var email = fd.get('email') || '';
+          var phone = fd.get('phone') || '';
+          var message = fd.get('message') || '';
+          var contactMethod = fd.get('contactMethod') || 'email';
+          var propId = fd.get('propertyId') || '';
+          var propTitle = fd.get('propertyTitle') || '';
+
+          // Validation
+          if(!name || !email || !phone){
+            if(status){ 
+              status.className = 'form-status error';
+              status.style.display = 'block'; 
+              status.textContent = 'Please fill in name, email, and phone.'; 
+            }
+            return;
+          }
+
+          var subject = 'Interest in ' + propTitle + ' (' + propId + ')';
+          var bodyLines = [];
+          bodyLines.push('Name: ' + name);
+          bodyLines.push('Email: ' + email);
+          bodyLines.push('Phone: ' + phone);
+          bodyLines.push('Preferred contact method: ' + contactMethod);
+          bodyLines.push('Property: ' + propTitle + ' (' + propId + ')');
+          bodyLines.push('');
+          bodyLines.push('Message:');
+          bodyLines.push(message);
+          var body = bodyLines.join('\n');
+
+          // Handle WhatsApp vs Email submission
+          if(contactMethod === 'whatsapp'){
+            try{
+              var waText = encodeURIComponent('Hello, I am interested in ' + propTitle + ' (' + propId + ')%0A%0A' + body);
+              var waUrl = 'https://wa.me/' + CONFIG.businessPhone + '?text=' + waText;
+              window.open(waUrl, '_blank');
+              if(status){ 
+                status.className = 'form-status success';
+                status.style.display = 'inline-block'; 
+                status.textContent = '✓ Opening WhatsApp...'; 
+              }
+              return;
+            }catch(e){ console.error('WhatsApp error:', e); }
+          }
+
+          // Email submission
+          var mailto = 'mailto:' + CONFIG.agentEmail + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+          window.location.href = mailto;
+
+          if(status){ 
+            status.className = 'form-status success';
+            status.style.display = 'inline-block'; 
+            status.textContent = '✓ Opening email client...'; 
+          }
+        });
+
+        var cancel = document.getElementById('interest-cancel');
+        if(cancel){ 
+          cancel.addEventListener('click', function(){ 
+            form.reset(); 
+            if(status){ status.style.display = 'none'; } 
+          }); 
+        }
+      }catch(err){ console.error('Form setup error:', err); }
+    }
+
+    function setupPropertyStats(property){
+      try{
+        var favBtn = document.getElementById('fav-btn');
+        var favCountEl = document.getElementById('fav-count');
+        var baseFavs = (hashStringToInt(property.id+'fav') % 120) + 1;
+        var favState = isFavorite(property.id);
+
+        if(favCountEl){ 
+          favCountEl.textContent = (baseFavs + (favState ? 1 : 0)) + ' saved'; 
+        }
+
+        if(!favBtn) return;
+
+        favBtn.addEventListener('click', function(e){
+          e.preventDefault();
+          var nowFav = !isFavorite(property.id);
+          setFavorite(property.id, nowFav);
+          
+          // Update button state
+          var span = favBtn.querySelector('span:first-child');
+          var label = favBtn.querySelector('span:last-child');
+          if(span) span.textContent = nowFav ? '♥' : '♡';
+          if(label) label.textContent = nowFav ? 'Saved' : 'Save';
+          favBtn.setAttribute('aria-pressed', String(nowFav));
+
+          // Update count
+          var current = parseInt((favCountEl && favCountEl.textContent) || '0');
+          if(!isNaN(current)){
+            if(nowFav) current++; else current = Math.max(0, current - 1);
+            if(favCountEl) favCountEl.textContent = current + ' saved';
+          }
+        });
+      }catch(err){ console.error('Stats setup error:', err); }
+    }
+
+    // ===== INITIALIZATION =====
+    (function(){
+      var id = getParam('id');
+      var prop = PROPERTIES[id];
+      render(prop);
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
